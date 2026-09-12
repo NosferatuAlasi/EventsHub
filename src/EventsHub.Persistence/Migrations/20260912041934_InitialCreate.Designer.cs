@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Persistence;
+using EventsHub.Persistence;
 
 #nullable disable
 
-namespace Persistence.Migrations
+namespace EventsHub.Persistence.Migrations
 {
     [DbContext(typeof(AppDbContext))]
     [Migration("20260912041934_InitialCreate")]
@@ -20,7 +20,7 @@ namespace Persistence.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "10.0.12");
 
-            modelBuilder.Entity("Domain.Event", b =>
+            modelBuilder.Entity("EventsHub.Domain.Event", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("TEXT");

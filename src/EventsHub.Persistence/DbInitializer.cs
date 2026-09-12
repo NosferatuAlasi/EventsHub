@@ -1,6 +1,6 @@
-using Domain;
+using EventsHub.Domain;
 
-namespace Persistence;
+namespace EventsHub.Persistence;
 
 public class DbInitializer
 {

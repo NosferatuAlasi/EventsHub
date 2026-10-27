@@ -1,20 +1,9 @@
 using System.Reflection;
-using EventsHub.API.Controllers;
-using EventsHub.Persistence;
-using Microsoft.EntityFrameworkCore;
+using EventsHub.Api.Controllers;
 using Newtonsoft.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
-
-// EventsController takes AppDbContext as a constructor dependency; register it
-// so AddControllersAsServices() can resolve the controller. The doc/schema
-// generation never queries the database, so a throwaway Sqlite in-memory
-// connection is enough.
-services.AddDbContext<AppDbContext>(options =>
-{
-    options.UseSqlite("Data Source=:memory:");
-});
 
 services
     .AddOpenApiDocument(document =>

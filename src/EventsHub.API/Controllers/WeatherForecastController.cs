@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace EventsHub.API.Controllers;
+namespace EventsHub.Api.Controllers;
 
 public class WeatherForecastController : EventsHubBaseController
 {

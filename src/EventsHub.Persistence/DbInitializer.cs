@@ -2,14 +2,11 @@ using EventsHub.Domain;
 
 namespace EventsHub.Persistence;
 
-public class DbInitializer
+public static class DbInitializer
 {
     public static async Task SeedDataAsync(AppDbContext context)
     {
-        if (context.Events.Any())
-        {
-            return;   // DB has been seeded
-        }
+        if (context.Events.Any()) return;
 
         var events = new List<Event>
         {
@@ -63,8 +60,7 @@ public class DbInitializer
                 Latitude = "21.0997",
                 Longitude = "-86.7561"
             },
-            new()   
-            {
+            new() {
                 Title = "Future Event 1",
                 Date = DateTime.Now.AddMonths(1),
                 Description = "Event 1 months in future",
@@ -84,8 +80,7 @@ public class DbInitializer
                 Latitude = "19.2828",
                 Longitude = "-99.1036"
             },
-            new()   
-            {
+            new() {
                 Title = "Future Event 3",
                 Date = DateTime.Now.AddMonths(4),
                 Description = "Event 4 months in future",
@@ -95,8 +90,7 @@ public class DbInitializer
                 Latitude = "19.4847",
                 Longitude = "-99.1176"
             },
-            new()   
-            {
+            new() {
                 Title = "Future Event 4",
                 Date = DateTime.Now.AddMonths(6),
                 Description = "Event 6 months in future",
@@ -119,7 +113,7 @@ public class DbInitializer
         };
 
         context.Events.AddRange(events);
+
         await context.SaveChangesAsync();
     }
-
 }

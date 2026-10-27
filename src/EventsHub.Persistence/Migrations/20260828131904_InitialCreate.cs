@@ -17,12 +17,12 @@ namespace EventsHub.Persistence.Migrations
                 {
                     Id = table.Column<string>(type: "TEXT", nullable: false),
                     Title = table.Column<string>(type: "TEXT", nullable: false),
+                    Date = table.Column<DateTime>(type: "TEXT", nullable: false),
                     Description = table.Column<string>(type: "TEXT", nullable: false),
                     Category = table.Column<string>(type: "TEXT", nullable: false),
-                    Date = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    IsCancelled = table.Column<bool>(type: "INTEGER", nullable: false),
                     City = table.Column<string>(type: "TEXT", nullable: false),
                     Venue = table.Column<string>(type: "TEXT", nullable: false),
-                    IsCancelled = table.Column<bool>(type: "INTEGER", nullable: false),
                     Latitude = table.Column<string>(type: "TEXT", nullable: false),
                     Longitude = table.Column<string>(type: "TEXT", nullable: false)
                 },

@@ -8,7 +8,7 @@ http:
   url: "{{baseUrl}}/events/:eventId"
   params:
     - name: eventId
-      value: non-existing-event
+      value: non-existing-eventId
       type: path
   auth: inherit
 
@@ -16,13 +16,13 @@ runtime:
   scripts:
     - type: tests
       code: |-
-        test("Status code is 404 Not Found",function(){
+        test("Status code is 404 Not Found", function() {
           expect(res.getStatus()).to.equal(404);
         });
 
-        test("Response returns right data", function(){
+        test("Response returns an array", function() {
           const body = res.getBody();
-          expect(body).to.equal("The event with the specified ID was not found.");
+          expect(body).to.equal("The event was not found");
         });
 
 settings:
